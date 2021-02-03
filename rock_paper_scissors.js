@@ -2,30 +2,38 @@
 // player inputs random play.
 // computer evaluates logic
 
-playerSelection = lowerCase(prompt("Choose: Rock/ Paper/ Scissors"));
+toContinue = true;
 
-function computerPlay() {
-    let plays = Array("rock", "paper", "scissors");
-    computerSelection = plays[Math.floor(Math.random() * plays.length)];
-    return computerSelection;
-}
+        while(toContinue) {
+            playerSelection = prompt("Choose: Rock/ Paper/ Scissor").toLowerCase();
+                if (playerSelection === null || playerSelection === "") {
+                    alert('Please enter an answer.');
+                }
+                console.log(typeof(playerSelection));
+                    
+            let plays = Array("rock", "paper", "scissor");
+            computerSelection = plays[Math.floor(Math.random() * plays.length)];
+            console.log(typeof(computerSelection));
 
-function play(playerSelection, computerPlay()) {
-    if (playerSelection === "rock" && computerPlay() === "scissors") {
-        alert("You win! Rock beats scissors.");
-    } else if (playerSelection === "rock" && computerPlay() === "paper") {
-        alert("You lose! Paper beats rock.");
-    } else if (playerSelection === "paper" && computerPlay() === "rock") {
-        alert("You win! Paper beats rock.");
-    } else if (playerSelection === "paper" && computerPlay() === "scissor") {
-        alert("You lose! Scissor beats paper.");
-    } else if (playerSelection === "scissor" && computerPlay() === "rock") {
-        alert("You lose! Rock beats scissor");
-    } else if (playerSelection === "scissor" && computerPlay() === "paper") {
-        alert("You win! Scissor beats paper.");
-    } else if (playerSelection === computerPlay()) {
-        alert("Match tied!");
-    }
-}
-
-play()
+            function game(playerSelection, computerSelection) {
+                if (playerSelection === "rock" && computerSelection === "scissor") {
+                    return "You win! Rock beats scissors.";
+                } else if (playerSelection === "rock" && computerSelection === "paper") {
+                    return "You lose! Paper beats rock.";
+                } else if (playerSelection === "paper" && computerSelection === "rock") {
+                    return "You win! Paper beats rock.";
+                } else if (playerSelection === "paper" && computerSelection === "scissor") {
+                    return "You lose! Scissor beats paper.";
+                } else if (playerSelection === "scissor" && computerSelection === "rock") {
+                    return "You lose! Rock beats scissor";
+                } else if (playerSelection === "scissor" && computerSelection === "paper") {
+                    return "You win! Scissor beats paper.";
+                } else {
+                    return "Match tied!";
+                }
+                console.log(typeof(playerSelection));
+                console.log(typeof(computerSelection));
+            }
+            
+            game();
+        }    
